@@ -1,1 +1,1 @@
-# Stash And Gif
+# Stash & Gif

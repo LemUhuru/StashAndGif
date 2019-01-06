@@ -1,7 +1,6 @@
 import React from 'react';
 import Gif from './Gif';
 
-
 const GifList = props => {
     return (
         <div className="gif-list">
@@ -9,5 +8,6 @@ const GifList = props => {
         </div>
     )
 };
+
 
 export default GifList;

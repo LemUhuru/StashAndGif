@@ -1,0 +1,32 @@
+
+body {
+    font-family: "Walsheim",arial,sans-serif;
+}
+
+@font-face {
+    font-family: "Walsheim";
+    src: url('../GT-Walsheim-Pro-Trial-Light.otf')   
+}
+
+
+.brand-name a {
+    font-size: 21px;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    font-family: "Walsheim";
+    border: 2px solid #fff;
+    padding: 10px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 3px #fcae00;
+}
+
+.MuiAppBar-colorPrimary-18 {
+    background: linear-gradient(28deg, #472086, #4a228a);
+}
+
+.MuiButton-containedPrimary-98 {
+    color: #fff;
+    background-color: #fcae00 !important;
+}
+

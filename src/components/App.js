@@ -1,7 +1,8 @@
 import * as React from 'react';
 import Search from './Search';
 import GifList from './GifList';
-import Divider from '@material-ui/core/Divider';
+import SectionDivider from './SectionDivider';
+import Header from './shared/Header';
 
 class App extends React.Component {
     constructor(props) {
@@ -16,8 +17,9 @@ class App extends React.Component {
     render() {
         return (
             <div>
+                <Header />
                 <Search />
-                <Divider variant="inset" />
+                <SectionDivider variant="inset" />
                 <GifList />
             </div>
         )
