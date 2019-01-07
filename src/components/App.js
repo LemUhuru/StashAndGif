@@ -1,26 +1,22 @@
 import * as React from 'react';
-import Search from './Search';
-import GifList from './GifList';
-import SectionDivider from './SectionDivider';
-import Header from './shared/Header';
+import SectionDivider from './Shared/SectionDivider';
+import Header from './Shared/Header';
+import FavoriteGifList from './Favorite/FavoriteGifList';
+import GifList from '../components/Gif/GifListContainer';
+import Loader from '../components/Shared/Loader';
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            gifs: {},
-            favorites: {},
-        };
-    };
-
     render() {
+        const { isPending, isError } = this.props;
+        const showGifs = !isPending && !isError;
+        console.log(this.props, 'hey im gifs');
+
         return (
             <div>
                 <Header />
-                <Search />
+                <FavoriteGifList />
                 <SectionDivider variant="inset" />
-                <GifList />
+                {showGifs && <GifList />}
             </div>
         )
     };
