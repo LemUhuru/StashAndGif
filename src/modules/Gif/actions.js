@@ -6,14 +6,16 @@ import {
 } from './types';
 
 const BASE_URL = 'http://api.giphy.com/v1/gifs/';
-const { GIF_API_KEY } = process.env;
+const { REACT_APP_GIF_API_KEY } = process.env;
+
 
 const fetchGifs = query => {
     return dispatch => {
         dispatch(fetchGifsPending());
 
         try {
-            const path = `${BASE_URL}search?q=${query}&api_key=${GIF_API_KEY}`;
+            console.log(process.env, 'proccess')
+            const path = `${BASE_URL}search?q=${query}&api_key=${REACT_APP_GIF_API_KEY}`;
             axios.get(path)
             .then(response => {
                 const { data } = response;
