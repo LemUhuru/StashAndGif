@@ -6,7 +6,7 @@ const Gif = props => {
 
     return (
         <div className="gif">
-            <FavoriteSection />
+            <FavoriteSection gifId={id} />
             <img id={id} alt={title} src={url} />
         </div>
     )

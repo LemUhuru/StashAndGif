@@ -1,11 +1,9 @@
 import * as React from 'react';
-import SectionDivider from './Shared/SectionDivider';
 import Header from './Shared/Header';
-import FavoriteGifList from './Favorite/FavoriteGifList';
 import GifList from '../components/Gif/GifListContainer';
 import Loader from '../components/Shared/Loader';
 import ErrorLabel from '../components/Shared/ErrorLabel';
-import FaveButton from '../components/Favorite/FaveButton';
+import FavoriteBanner from '../components/Favorite/FavoriteBanner';
 
 class App extends React.Component {
     render() {
@@ -17,8 +15,7 @@ class App extends React.Component {
         return (
             <div>
                 <Header />
-                <FavoriteGifList />
-                <SectionDivider variant="inset" />
+                <FavoriteBanner />
                 {isPending && <Loader />}
                 {isError && <ErrorLabel errorMsg={errorMsg} isError={isError} />}
                 {showGifs && <GifList />}

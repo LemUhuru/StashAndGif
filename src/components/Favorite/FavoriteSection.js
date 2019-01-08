@@ -1,10 +1,10 @@
 import React from 'react';
 import FaveButton from './FaveButton';
 
-const FavoriteSection = props => {
+const FavoriteSection = ({ gifId }) => {
     return (
         <div className="favorite-section">
-            <FaveButton />
+            <FaveButton gifId={gifId} />
         </div>
     )
 };

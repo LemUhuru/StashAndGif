@@ -1,7 +1,11 @@
 import React from 'react';
 
 
-const FaveButton = () => <span className="fave-btn"></span>;
+const FaveButton = ({ gifId }) => {
+    return (
+        <span id={gifId} className="fave-btn"></span>
+    )
+};
 
 
 export default FaveButton;

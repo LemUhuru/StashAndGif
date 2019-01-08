@@ -84,7 +84,22 @@ body {
     margin: 0 auto;
 }
 
-/* Favorite Feature */
+/* ------ Favorite Section ----- */
+
+.favorite-banner:hover {
+    border: 2px solid #fcae00;
+}
+
+.sticky-banner {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(28deg, #472086, #4a228a);
+    z-index: 1000;
+    border-radius: 2px;
+}
+
 .favorite-section {
     width: 30px;
     height: 35px;
@@ -92,9 +107,10 @@ body {
     position: absolute;
     top: 20px;
     right: 22px;
-    opacity: 9.8;
+    opacity: 1;
 }
 
+/* Heart Button */
 .fave-btn {
     width: 100px;
     height: 100px;
@@ -104,7 +120,6 @@ body {
     transform: translate(-50%, -50%);
     background: url('../heart-animation.png') no-repeat;
     background-position: 0 0;
-    /* background-size: 50px 25px;  */
     cursor: pointer;
     animation: fave-heart 1s steps(28);
   }
@@ -122,4 +137,5 @@ body {
       background-position: -2800px 0;
     }
   }
-  
+
+
