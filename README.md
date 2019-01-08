@@ -6,6 +6,9 @@
 * Animations
 * Fixed Header Favorites List
 * Favorites Carousel
+* Persist favorite gifs using local storage
+* Error handling
+
 
 ## Stack
 * Client Framework: React & Redux
@@ -18,5 +21,8 @@
 * Axios for network requests
 * Served from Heroku
 * NPM
+
+## Work Outstanding
+* Improve responsiveness for mobile and tablet.
 
 

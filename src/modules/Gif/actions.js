@@ -3,6 +3,8 @@ import {
     FETCH_GIFS_FAILURE,
     FETCH_GIFS_SUCCESS,
     FETCH_GIFS_PENDING,
+    ADD_FAVORITE_GIF,
+    REMOVE_FAVORITE_GIF,
 } from './types';
 
 const BASE_URL = 'http://api.giphy.com/v1/gifs/';
@@ -14,22 +16,21 @@ const fetchGifs = query => {
         dispatch(fetchGifsPending());
 
         try {
-            console.log(process.env, 'proccess')
             const path = `${BASE_URL}search?q=${query}&api_key=${REACT_APP_GIF_API_KEY}`;
+
             axios.get(path)
             .then(response => {
                 const { data } = response;
 
-
                 dispatch(fetchGifsSuccess(data));
             })
-            .catch(error =>{
-                dispatch(fetchGifsFailure(error));
+            .catch(error => {
+                dispatch(fetchGifsFailure(error.message));
             });
         }
-
+        
         catch(error) {
-            dispatch(fetchGifsFailure(error));
+            dispatch(fetchGifsFailure(error.message));
         };
     };
 };
@@ -56,10 +57,26 @@ const fetchGifsFailure = error => {
     };
 };
 
+const addFavoriteGif = gif => {
+    return {
+        type: ADD_FAVORITE_GIF,
+        payload: gif,
+    };
+};
+
+const removeFavoriteGif = id => {
+    return {
+        type: REMOVE_FAVORITE_GIF,
+        payload: id,
+    }
+}
+
 
 export {
     fetchGifs,
     fetchGifsFailure,
     fetchGifsPending,
     fetchGifsSuccess,
+    addFavoriteGif,
+    removeFavoriteGif,
 };

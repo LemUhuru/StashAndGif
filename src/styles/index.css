@@ -42,6 +42,10 @@ body {
 
 /* Gifs */
 
+.gif {
+    position: relative;
+}
+
 .gif-list li {
     list-style-type: none;
     display: inline-block;
@@ -67,5 +71,55 @@ body {
 
 /* Progress Loader */
 .progress-loader {
+    width: 100px;
+    margin: 20px auto;
+}
+
+.progress-loader svg {
+    width: 40px !important;
+}
+
+.notification-label {
+    width: 100%;
     margin: 0 auto;
 }
+
+/* Favorite Feature */
+.favorite-section {
+    width: 30px;
+    height: 35px;
+    z-index: 100;
+    position: absolute;
+    top: 20px;
+    right: 22px;
+    opacity: 9.8;
+}
+
+.fave-btn {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: url('../heart-animation.png') no-repeat;
+    background-position: 0 0;
+    /* background-size: 50px 25px;  */
+    cursor: pointer;
+    animation: fave-heart 1s steps(28);
+  }
+
+  .fave-btn.active {
+    background-position: -2800px 0;
+    transition: background 1s steps(28);
+  }
+  
+  @keyframes fave-heart {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -2800px 0;
+    }
+  }
+  
