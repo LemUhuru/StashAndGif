@@ -11,11 +11,7 @@ const gifList =  [
 const FavoriteGifList = props => {
     const renderGifList = gifList.map((gifSrc, index) => <li key={index}><img alt="" src={gifSrc} /></li>);
 
-    return (
-        <ul className="gif-list">
-            {renderGifList}           
-        </ul>
-    );
+    return <ul className="gif-list">{renderGifList}</ul>;
 };
 
 export default FavoriteGifList;
