@@ -5,7 +5,7 @@ import DividerStyles from '../../styles/material/divider';
 import { withStyles } from '@material-ui/core';
 
 const SectionDivider = props => {
-    return <Divider variant="inset" />;
+    return <Divider />;
 };
 
 export default withStyles(DividerStyles)(SectionDivider);

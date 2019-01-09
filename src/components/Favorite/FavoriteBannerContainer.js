@@ -12,5 +12,4 @@ const mapStateToProps = ({ gif }) => {
 
 export default connect(
     mapStateToProps, 
-    null)
-    (FavoriteBanner);
+    null)(FavoriteBanner);

@@ -1,29 +1,20 @@
 import React, { Component } from 'react';
 import Gif from './Gif';
-import { removeFavoriteGif } from '../../modules/Gif/actions';
+import { isFavorited } from '../../helpers/gifs';
 
 class GifList extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            isActive: '',
-        }
-    }
-
+    // Convert to functional component.
+    
     handleClick = event => {
         const { addFavoriteGif, removeFavoriteGif, gif } = this.props;
         const { gifs, favoriteGifs } = gif;
         const { id, classList } = event.target;
         const faveGif = gifs[id];
-
-        const favoriteIds = Object.keys(favoriteGifs);
-        const isFavorited = favoriteIds.includes(id);
         const isFaveButton = classList.contains('fave-btn');
 
         // Spark animation
         if (isFaveButton) {
-            if (isFavorited) {
+            if (isFavorited(id, favoriteGifs)) {
                 classList.remove('active');
                 removeFavoriteGif(id);
             } else {

@@ -5,7 +5,7 @@ body {
 
 @font-face {
     font-family: "Walsheim";
-    src: url('../GT-Walsheim-Pro-Trial-Light.otf')   
+    src: url('../assets/GT-Walsheim-Pro-Trial-Light.otf')   
 }
 
 
@@ -46,6 +46,12 @@ body {
     position: relative;
 }
 
+.gif-list {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
 .gif-list li {
     list-style-type: none;
     display: inline-block;
@@ -61,7 +67,7 @@ body {
     opacity: 0.8;
     transform: scale(0.8);
     cursor: pointer;
-    transition: opacity 0.2s;
+    transition: opacity, transform 0.2s;
 }
 
 .gif-list li img:hover {
@@ -85,9 +91,46 @@ body {
 }
 
 /* ------ Favorite Section ----- */
+.favorite-banner-title {
+    font-size: 20px;
+    margin-top: 50px;
+    margin-left: 80px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
 
-.favorite-banner:hover {
+.favorite-banner {
+    position: relative;
+}
+
+/* .favorite-banner:hover {
     border: 2px solid #fcae00;
+} */
+
+.favorites-page-link {
+    text-decoration: none;
+    position: absolute;
+    right: 0;
+    /* left: 50%; */
+    bottom: -10px;
+    z-index: 1000;
+}
+
+.MuiDivider-inset-144 {
+    margin-left: 0 !important;
+}
+
+.favorites-page-link .MuiChip-root-116 {
+    background: #fcae00;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100px;
+    height: 25px;
+}
+
+.favorites-page-link .MuiChip-root-116:hover {
+    background: #dc9806;
 }
 
 .sticky-banner {
@@ -98,6 +141,19 @@ body {
     background: linear-gradient(28deg, #472086, #4a228a);
     z-index: 1000;
     border-radius: 2px;
+    max-height: 200px;
+}
+
+.sticky-banner .gif-list {
+    padding-left: 50px;
+}
+
+.sticky-banner .brand-name {
+    position: relative;
+    bottom: 173px;
+    left: 26px;
+    transform: rotate(90deg);
+    transform-origin: left top 0;
 }
 
 .favorite-section {
@@ -118,7 +174,7 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: url('../heart-animation.png') no-repeat;
+    background: url('../assets/heart-animation.png') no-repeat;
     background-position: 0 0;
     cursor: pointer;
     animation: fave-heart 1s steps(28);

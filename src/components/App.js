@@ -3,7 +3,7 @@ import Header from './Shared/Header';
 import GifList from '../components/Gif/GifListContainer';
 import Loader from '../components/Shared/Loader';
 import ErrorLabel from '../components/Shared/ErrorLabel';
-import FavoriteBanner from '../components/Favorite/FavoriteBanner';
+import FavoriteBanner from '../components/Favorite/FavoriteBannerContainer';
 
 class App extends React.Component {
     render() {
