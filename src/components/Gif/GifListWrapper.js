@@ -16,37 +16,14 @@ class GifListWrapper extends Component {
 
 
     handleGifClick = event => {
-        const { addFavoriteGif, removeFavoriteGif, updateFavoriteGif, gif, faveGif } = this.props;
+        const { addFavoriteGif, removeFavoriteGif, gif, faveGif } = this.props;
         const { gifs } = gif;
         const { favoriteGifs } = faveGif;
 
         const { id, classList } = event.target;
         const favoriteGif = gifs[id];
         const isFaveButton = classList.contains('fave-btn');
-
-        // Swap fav with placeholder
-        // Check if favoriteGifs length is < 5 then updateFaveGifs else addFavoriteGifs
-        //   iterate over favoriteGifsArr 
-        //         if the index === the gifId it hasn't been swapped yet.
-        // if it is then updateFavoriteGif(, faveGif)
-        // Spark animation
-        //   const faveGifs = getGifsAsArray(favoriteGifs);
-        //   console.log(faveGifs.length, 'length')
-        //   if (faveGifs.length < 6) {
-        //     for (let i = 0; i < faveGifs.length < 10; i++) {
-        //         const placeholderId = faveGifs[i];
-        //         console.log(placeholderId)
-
-        //         if (i === parseInt(placeholderId)) {
-        //             updateFavoriteGif(`placeholder-${placeholderId}`, favoriteGif);
-        //             break;
-        //         };
-        //     }
-        //     //  const placeholderIds = Object.keys(favoriteGifs);
-        //     //  const placeholderId = `placeholder-${Math.min(placeholderIds)}`;
-
-        //   }
-
+     
         if (isFaveButton) { 
             if (isFavorited(id, favoriteGifs)) {
                 classList.remove('trigger');
@@ -56,7 +33,6 @@ class GifListWrapper extends Component {
                 addFavoriteGif(favoriteGif);
             };
         };
-        
     };
 
     render() {
