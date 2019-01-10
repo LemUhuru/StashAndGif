@@ -1,21 +1,21 @@
 import React from 'react';
-import GifList from '../Gif/GifListContainer';
+import GifListWrapper from '../Gif/GifListWrapperContainer';
 import Loader from '../Shared/Loader';
 import ErrorLabel from '../Shared/ErrorLabel';
-import FavoriteBanner from '../Favorite/FavoriteBannerContainer';
+import FavoriteBanner from '../Favorite/FavoriteBanner';
 
 const Home = props => {
-    const { gif, history } = props;
+    const { gif, history, faveGif } = props;
     const { gifs } = gif;
     const { isPending, isError, errorMsg } = gif;
     const showGifs = !isPending && !isError && gifs; 
 
     return (
     <div className="container">
-        <FavoriteBanner history={history} />
+        <FavoriteBanner history={history} faveGif={faveGif} />
         {isPending && <Loader />}
         {isError && <ErrorLabel errorMsg={errorMsg} isError={isError} />}
-        {showGifs && <GifList />}
+        {showGifs && <GifListWrapper />}
     </div>);
 };
 

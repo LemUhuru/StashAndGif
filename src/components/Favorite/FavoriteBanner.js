@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FavoriteGifList from './FavoriteGifList';
+import GifListWrapper from '../Gif/GifListWrapperContainer';
 import SectionDivider from '../Shared/SectionDivider';
 import Logo from '../Shared/Logo';
 import Button from '@material-ui/core/Button';
@@ -33,7 +33,7 @@ class FavoriteBanner extends Component {
 
     render() {
         const { stickyBanner } = this.state;
-        const { faveGif: { favoriteGifs }, history } = this.props;
+        const { faveGif, history } = this.props;
         console.log(history);
        
         return (
@@ -47,7 +47,7 @@ class FavoriteBanner extends Component {
                 >
                    View Faves
                 </Button>}
-                <FavoriteGifList favoriteGifs={favoriteGifs} useSlider={true} />
+                <GifListWrapper isFaveList={true} faveGif={faveGif} />
                 {stickyBanner && <Logo />}
                 <SectionDivider variant="inset" />
             </div>

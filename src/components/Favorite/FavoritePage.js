@@ -1,13 +1,11 @@
 import React from 'react';
-import FavoriteGifList from './FavoriteGifList';
+import GifListWrapper from '../Gif/GifListWrapperContainer';
 
-const FavoritePage = ({ faveGif }) => {
-    const { favoriteGifs } = faveGif;
-    
+const FavoritePage = ({ faveGif }) => {    
     return (
     <div className="favorite-page">
         <h1 className="favorites-page__title">Favorites</h1>
-        <FavoriteGifList favoriteGifs={favoriteGifs} />
+        <GifListWrapper faveGif={faveGif} isFaveList={true}  />
     </div>);
 };
 

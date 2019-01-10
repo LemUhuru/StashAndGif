@@ -2,7 +2,9 @@ import React from 'react';
 import Gif from '../Gif/Gif';
 import { getGifsAsArray, isPlaceHolder } from '../../helpers/gifs';
 
-const FavoriteGifList = ({ favoriteGifs }) => {
+const FavoriteGifList = props => {
+    const { faveGif, handleGifClick } = props;
+    const { favoriteGifs } = faveGif;
     const favoriteGifList = getGifsAsArray(favoriteGifs);
     const renderFavoriteGifs = favoriteGifList
     .map(gif => {
@@ -15,7 +17,7 @@ const FavoriteGifList = ({ favoriteGifs }) => {
     });
 
     return ( 
-        <ul className="gif-list">
+        <ul onClick={handleGifClick} className="gif-list faves">
             {renderFavoriteGifs}
         </ul>
     );
