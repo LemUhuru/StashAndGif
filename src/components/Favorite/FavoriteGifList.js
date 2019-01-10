@@ -3,7 +3,7 @@ import Gif from '../Gif/Gif';
 import { getGifsAsArray, isPlaceHolder } from '../../helpers/gifs';
 
 const FavoriteGifList = props => {
-    const { faveGif, handleGifClick } = props;
+    const { faveGif, handleGifClick, gifLimit } = props;
     const { favoriteGifs } = faveGif;
     const favoriteGifList = getGifsAsArray(favoriteGifs);
     const renderFavoriteGifs = favoriteGifList
@@ -16,9 +16,10 @@ const FavoriteGifList = props => {
                 </li>);
     });
 
+    
     return ( 
         <ul onClick={handleGifClick} className="gif-list faves">
-            {renderFavoriteGifs}
+            {gifLimit ? renderFavoriteGifs.slice(0, gifLimit) : renderFavoriteGifs}
         </ul>
     );
 };

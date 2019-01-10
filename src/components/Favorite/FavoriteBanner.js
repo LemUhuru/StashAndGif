@@ -47,7 +47,7 @@ class FavoriteBanner extends Component {
                 >
                    View Faves
                 </Button>}
-                <GifListWrapper isFaveList={true} faveGif={faveGif} />
+                <GifListWrapper isFaveList={true} faveGif={faveGif} gifLimit={5} />
                 {stickyBanner && <Logo />}
                 <SectionDivider variant="inset" />
             </div>

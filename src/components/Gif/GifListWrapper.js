@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GifList from './GifList';
 import FavoriteGifList from '../Favorite/FavoriteGifList';
-import { isFavorited } from '../../helpers/gifs';
+import { isFavorited, getGifsAsArray } from '../../helpers/gifs';
 
 class GifListWrapper extends Component {
     constructor(props) {
@@ -22,13 +22,13 @@ class GifListWrapper extends Component {
         // Swap fav with placeholder
         // Check if favoriteGifs length is < 5 then updateFaveGifs else addFavoriteGifs
         //   iterate over favoriteGifsArr 
-                // if the index === the gifId it hasn't been swapped yet.
+        //         if the index === the gifId it hasn't been swapped yet.
         // if it is then updateFavoriteGif(, faveGif)
         // Spark animation
-        //   const gifsArr = getGifsAsArray(favoriteGifs);
-        //   if (gifsArr.length < 5) {
+          const gifsArr = getGifsAsArray(favoriteGifs);
+          if (gifsArr.length < 5) {
 
-        //   }
+          }
         if (isFaveButton) {
             if (isFavorited(id, favoriteGifs)) {
                 classList.remove('trigger');
@@ -42,14 +42,14 @@ class GifListWrapper extends Component {
     };
 
     render() {
-        const { isFaveList = false, gif, faveGif } = this.props;
+        const { isFaveList = false, gif, faveGif, gifLimit } = this.props;
 
         return (
             <div>
                 {isFaveList ? 
-                <FavoriteGifList faveGif={faveGif} handleGifClick={this.handleGifClick} /> 
+                <FavoriteGifList faveGif={faveGif} handleGifClick={this.handleGifClick} gifLimit={gifLimit} /> 
                 : 
-                <GifList gif={gif} handleGifClick={this.handleGifClick} />}
+                <GifList gif={gif} handleGifClick={this.handleGifClick} gifLimit={gifLimit}  />}
             </div>
             )
     };
