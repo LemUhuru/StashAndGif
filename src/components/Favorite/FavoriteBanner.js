@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GifListWrapper from '../Gif/GifListWrapperContainer';
-import SectionDivider from '../Shared/SectionDivider';
-import Logo from '../Shared/Logo';
+import SectionDivider from '../Common/SectionDivider';
+import Logo from '../Common/Logo';
 import Button from '@material-ui/core/Button';
 
 class FavoriteBanner extends Component {

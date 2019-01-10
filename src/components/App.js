@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Header from './Shared/Header';
+import Header from './Common/Header';
 import FavoritePage from './Favorite/FavoritePage';
 import { Route } from 'react-router-dom';
 import Home from './Home/Home';

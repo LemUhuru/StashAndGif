@@ -1,7 +1,7 @@
 import React from 'react';
 import GifListWrapper from '../Gif/GifListWrapperContainer';
-import Loader from '../Shared/Loader';
-import ErrorLabel from '../Shared/ErrorLabel';
+import Loader from '../Common/Loader';
+import ErrorLabel from '../Common/ErrorLabel';
 import FavoriteBanner from '../Favorite/FavoriteBanner';
 
 const Home = props => {
