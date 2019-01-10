@@ -13,9 +13,7 @@ and state to both.
 const FaveButton = ({ gifId }) => {
     const classes = `fave-btn`;
 
-    return (
-        <span id={gifId} className={classes}></span>
-    )
+    return <span id={gifId} className={classes}></span>
 };
 
 
