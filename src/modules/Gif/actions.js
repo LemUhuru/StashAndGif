@@ -5,6 +5,7 @@ import {
     FETCH_GIFS_PENDING,
     ADD_FAVORITE_GIF,
     REMOVE_FAVORITE_GIF,
+    UPDATE_FAVORITE_GIF,
 } from './types';
 
 const BASE_URL = 'http://api.giphy.com/v1/gifs/';
@@ -64,12 +65,19 @@ const addFavoriteGif = gif => {
     };
 };
 
+const updateFavoriteGif = (id, gif) => {
+    return {
+        type: UPDATE_FAVORITE_GIF,
+        payload: { id, gif },
+    };
+};
+
 const removeFavoriteGif = id => {
     return {
         type: REMOVE_FAVORITE_GIF,
         payload: id,
-    }
-}
+    };
+};
 
 
 export {
@@ -79,4 +87,5 @@ export {
     fetchGifsSuccess,
     addFavoriteGif,
     removeFavoriteGif,
+    updateFavoriteGif,
 };

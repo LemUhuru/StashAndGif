@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import FavoriteGifList from './FavoriteGifList';
 import SectionDivider from '../Shared/SectionDivider';
 import Logo from '../Shared/Logo';
-import { Link } from 'react-router-dom';
-import Chip from '@material-ui/core/Chip';
+import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
@@ -14,6 +13,12 @@ const styles = theme => ({
     },
     chip: {
       margin: theme.spacing.unit,
+    },
+    button: {
+        margin: theme.spacing.unit,
+      },
+    input: {
+        display: 'none',
     },
   });
 
@@ -46,16 +51,22 @@ class FavoriteBanner extends Component {
 
     render() {
         const { stickyBanner } = this.state;
-        const { gif: { favoriteGifs } } = this.props;
-        
+        const { gif: { favoriteGifs }, classes: { button} } = this.props;
+
+       
         return (
             <div className={`favorite-banner ${stickyBanner && 'sticky-banner'}`}>
-                {!stickyBanner && <h2 className="favorite-banner-title">Fave Fives</h2>}
+                {!stickyBanner && 
+                <Button 
+                    onClick={this.handleButtonClick} 
+                    variant="contained" 
+                    color="primary" 
+                    className={`favorite-banner__btn ${button}`}
+                >
+                    Favorites
+                </Button>}
                 <FavoriteGifList favoriteGifs={favoriteGifs} />
                 {stickyBanner && <Logo />}
-                {/* <Link className="favorites-page-link" to="/favorites">
-                    <Chip label="See Faves" />
-                </Link> */}
                 <SectionDivider variant="inset" />
             </div>
         )

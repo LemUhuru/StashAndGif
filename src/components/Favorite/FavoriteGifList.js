@@ -1,22 +1,21 @@
 import React from 'react';
-
-const gifList =  [
-    // "https://media.giphy.com/media/l2Sq9qGTQnL5NyI6Y/giphy.gif",
-    // "https://media.giphy.com/media/5fBH6zoAQg9dHK2ttsc/giphy.gif",
-    // "https://media.giphy.com/media/72HahsJD4atSE/giphy.gif",
-    // "https://media.giphy.com/media/5fBH6z8aMV1RbA4FaSc/giphy.gif",
-    // "https://media.giphy.com/media/3oz8xBkRsgPTnbK1GM/giphy.gif",
-    "https://api.adorable.io/avatars/200/1",
-    "https://api.adorable.io/avatars/200/2",
-    "https://api.adorable.io/avatars/200/3",
-    "https://api.adorable.io/avatars/200/4",
-    "https://api.adorable.io/avatars/200/5"
-];
+import Gif from '../Gif/Gif';
+import { getGifsAsArray, isPlaceHolder } from '../../helpers/gifs';
 
 const FavoriteGifList = ({ favoriteGifs }) => {
-    const renderGifList = gifList.map((gifSrc, index) => <li key={index}><img alt="" src={gifSrc} /></li>);
+    const favoriteGifList = getGifsAsArray(favoriteGifs)
+    .map(gif => {
+        console.log(gif, 'its a gif')
+        const { title, images, id } = gif;
+        const { original: { url } } = images;
 
-    return <ul className="gif-list">{renderGifList}</ul>;
+
+        return (<li key={id}>
+                 <Gif id={id} title={title} url={url} placeholder={isPlaceHolder(id)} />
+                </li>);
+    });
+
+    return <ul className="gif-list">{favoriteGifList}</ul>;
 };
 
 export default FavoriteGifList;
