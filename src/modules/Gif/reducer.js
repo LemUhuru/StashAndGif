@@ -1,13 +1,9 @@
 import _ from 'lodash';
-import favoriteGifs from '../../seed/favoriteGifs';
 
 import {
     FETCH_GIFS_SUCCESS,
     FETCH_GIFS_FAILURE,
     FETCH_GIFS_PENDING,
-    ADD_FAVORITE_GIF,
-    REMOVE_FAVORITE_GIF,
-    UPDATE_FAVORITE_GIF,
 } from './types';
 
 const INITIAL_STATE = {
@@ -17,7 +13,6 @@ const INITIAL_STATE = {
     pagination: null,
     meta: null,
     gifs: {},
-    favoriteGifs,
 };
 
 export default function reducer(state = INITIAL_STATE, action = {}) {
@@ -45,24 +40,6 @@ export default function reducer(state = INITIAL_STATE, action = {}) {
                 isPending: false,
                 isSuccess: false,
                 errorMsg: action.payload,
-            };
-        
-        case ADD_FAVORITE_GIF:
-            return {
-                ...state,
-                favoriteGifs: { ...state.favoriteGifs, [action.payload.id]: action.payload }
-            };
-        
-        case UPDATE_FAVORITE_GIF:
-            return {
-                ...state,
-                favoriteGifs: { ...state.favoriteGifs, [action.payload.id]: action.payload.gif }
-            }
-        
-        case REMOVE_FAVORITE_GIF:
-            return {
-                ...state,
-                favoriteGifs: _.omit(state.favoriteGifs, action.payload)
             };
 
         default:

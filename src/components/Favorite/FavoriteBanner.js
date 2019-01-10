@@ -33,7 +33,7 @@ class FavoriteBanner extends Component {
 
     render() {
         const { stickyBanner } = this.state;
-        const { gif: { favoriteGifs }, history } = this.props;
+        const { faveGif: { favoriteGifs }, history } = this.props;
         console.log(history);
        
         return (

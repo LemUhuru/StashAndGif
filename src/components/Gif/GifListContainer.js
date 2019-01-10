@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import GifList from './GifList';
-import { addFavoriteGif, removeFavoriteGif } from '../../modules/Gif/actions';
+import { addFavoriteGif, removeFavoriteGif } from '../../modules/FavoriteGif/actions';
 
-const mapStateToProps = ({ gif }) => {
+const mapStateToProps = ({ gif, faveGif }) => {
 
     return {
-        gif
+        gif,
+        faveGif,
     };
 };
 

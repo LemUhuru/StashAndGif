@@ -1,8 +1,9 @@
 import React from 'react';
 import FavoriteGifList from './FavoriteGifList';
 
-const FavoritePage = ({ gif }) => {
-    const { favoriteGifs } = gif;
+const FavoritePage = ({ faveGif }) => {
+    const { favoriteGifs } = faveGif;
+    
     return (
     <div className="favorite-page">
         <h1 className="favorites-page__title">Favorites</h1>

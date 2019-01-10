@@ -1,8 +1,8 @@
 import React from 'react';
-import GifList from '../components/Gif/GifListContainer';
-import Loader from '../components/Shared/Loader';
-import ErrorLabel from '../components/Shared/ErrorLabel';
-import FavoriteBanner from '../components/Favorite/FavoriteBannerContainer';
+import GifList from '../Gif/GifListContainer';
+import Loader from '../Shared/Loader';
+import ErrorLabel from '../Shared/ErrorLabel';
+import FavoriteBanner from '../Favorite/FavoriteBannerContainer';
 
 const Home = props => {
     const { gif, history } = props;

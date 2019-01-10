@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Header from './Shared/Header';
-import FavoritePage from '../components/Favorite/FavoritePage';
+import FavoritePage from './Favorite/FavoritePage';
 import { Route } from 'react-router-dom';
-import Home from '../components/Home';
+import Home from './Home/Home';
 
 class App extends React.Component {
     render() {

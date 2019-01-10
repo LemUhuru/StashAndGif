@@ -6,10 +6,12 @@ class GifList extends Component {
     // Convert to functional component.
 
     handleClick = event => {
-        const { addFavoriteGif, removeFavoriteGif, gif } = this.props;
-        const { gifs, favoriteGifs } = gif;
+        const { addFavoriteGif, removeFavoriteGif, gif, faveGif } = this.props;
+        const { gifs } = gif;
+        const { favoriteGifs } = faveGif;
+
         const { id, classList } = event.target;
-        const faveGif = gifs[id];
+        const favoriteGif = gifs[id];
         const isFaveButton = classList.contains('fave-btn');
 
         // Swap fav with placeholder
@@ -28,7 +30,7 @@ class GifList extends Component {
                 removeFavoriteGif(id);
             } else {
                 classList.add('active');
-                addFavoriteGif(faveGif);
+                addFavoriteGif(favoriteGif);
             };
         };
         
