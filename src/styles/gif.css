@@ -1,0 +1,34 @@
+/*----------------Gif Styles-----------*/
+
+.gif {
+    position: relative;
+}
+
+.gif-list {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.gif-list li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 2px;
+    margin: 5px;
+}
+
+.gif-list li img {
+    width: 175px;
+    height: 175px;
+    border: 1px solid#3f51b5;
+    box-shadow: 1px 2px 3px #3f51b5;
+    opacity: 0.8;
+    transform: scale(0.8);
+    cursor: pointer;
+    transition: opacity, transform 0.2s;
+}
+
+.gif-list li img:hover {
+    opacity: 1;
+    transform: scale(1);
+}

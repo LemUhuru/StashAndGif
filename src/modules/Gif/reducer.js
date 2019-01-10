@@ -14,7 +14,6 @@ const INITIAL_STATE = {
     isPending : false,
     isError : false,
     errorMsg: '',
-    isSuccess: false,
     pagination: null,
     meta: null,
     gifs: {},
@@ -32,7 +31,6 @@ export default function reducer(state = INITIAL_STATE, action = {}) {
         case FETCH_GIFS_SUCCESS:
             return {
                 ...state,
-                isSuccess: true,
                 isPending: false,
                 isError: false,
                 gifs: _.mapKeys(action.payload.data, 'id'),

@@ -1,0 +1,14 @@
+/* --------------Progress Loader---------- */
+.progress-loader {
+    width: 100px;
+    margin: 20px auto;
+}
+
+.progress-loader svg {
+    width: 40px !important;
+}
+
+.notification-label {
+    width: 100%;
+    margin: 0 auto;
+}

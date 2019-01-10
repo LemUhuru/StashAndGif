@@ -1,11 +1,20 @@
-body {
-    font-family: "Walsheim",arial,sans-serif;
-}
+@import "./gif.css";
+@import "./progress-loader.css";
+@import "./search-form.css";
+@import "./favorite-gifs.css";
 
+
+/* Main Font */
 @font-face {
     font-family: "Walsheim";
     src: url('../assets/GT-Walsheim-Pro-Trial-Light.otf')   
 }
+
+
+body {
+    font-family: "Walsheim",arial,sans-serif;
+}
+
 
 .brand-name a {
     font-size: 21px;
@@ -18,186 +27,3 @@ body {
     border-radius: 2px;
     box-shadow: 1px 1px 3px #fcae00;
 }
-
-/* Search Styles */
-.MuiAppBar-colorPrimary-12 {
-    background: linear-gradient(28deg, #472086, #4a228a);
-}
-
-.MuiButton-containedPrimary-98 {
-    color: #fff;
-    background: #fcae00;
-}
-
-.MuiButton-containedPrimary-97 {
-    background-color: #fcae00 !important;
-}
-
-.MuiButton-containedPrimary-97:hover {
-    background-color: #dc9806 !important;
-}
-
-.search-form {
-    display: contents;
-}
-
-
-/* Gifs */
-
-.gif {
-    position: relative;
-}
-
-.gif-list {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-.gif-list li {
-    list-style-type: none;
-    display: inline-block;
-    padding: 2px;
-    margin: 5px;
-}
-
-.gif-list li img {
-    width: 175px;
-    height: 175px;
-    border: 1px solid#3f51b5;
-    box-shadow: 1px 2px 3px #3f51b5;
-    opacity: 0.8;
-    transform: scale(0.8);
-    cursor: pointer;
-    transition: opacity, transform 0.2s;
-}
-
-.gif-list li img:hover {
-    opacity: 1;
-    transform: scale(1);
-}
-
-/* Progress Loader */
-.progress-loader {
-    width: 100px;
-    margin: 20px auto;
-}
-
-.progress-loader svg {
-    width: 40px !important;
-}
-
-.notification-label {
-    width: 100%;
-    margin: 0 auto;
-}
-
-/* ------ Favorite Section ----- */
-.favorite-banner-title {
-    font-size: 20px;
-    margin-top: 50px;
-    margin-left: 80px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-}
-
-.favorite-banner {
-    position: relative;
-}
-
-/* .favorite-banner:hover {
-    border: 2px solid #fcae00;
-} */
-
-.favorites-page__title {
-    color: #fcae00;
-    font-weight: 400;
-    margin-left: 70px;
-    margin-top: 50px
-}
-
-.MuiDivider-inset-144 {
-    margin-left: 0 !important;
-}
-
-.favorites-page-link .MuiChip-root-116 {
-    background: #fcae00;
-    color: #fff;
-    font-weight: 600;
-    cursor: pointer;
-    width: 100px;
-    height: 25px;
-}
-
-.favorites-page-link .MuiChip-root-116:hover {
-    background: #dc9806;
-}
-
-.favorite-banner .favorite-banner__btn {
-    margin-top: 40px;
-    margin-left: 80px;
-    letter-spacing: 1px;
-}
-
-.sticky-banner {
-    position: fixed;
-    overflow: hidden;
-    top: 0;
-    width: 100%;
-    background: linear-gradient(28deg, #472086, #4a228a);
-    z-index: 1000;
-    border-radius: 2px;
-    max-height: 200px;
-}
-
-.sticky-banner .gif-list {
-    padding-left: 50px;
-}
-
-.sticky-banner .brand-name {
-    position: relative;
-    bottom: 173px;
-    left: 26px;
-    transform: rotate(90deg);
-    transform-origin: left top 0;
-}
-
-.favorite-section {
-    width: 30px;
-    height: 35px;
-    z-index: 100;
-    position: absolute;
-    top: 20px;
-    right: 22px;
-    opacity: 1;
-}
-
-/* Heart Button */
-.fave-btn {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background: url('../assets/heart-animation.png') no-repeat;
-    background-position: 0 0;
-    cursor: pointer;
-    animation: fave-heart 1s steps(28);
-  }
-
-.fave-btn.active {
-background-position: -2800px 0;
-transition: background 1s steps(28);
-}
-  
-  @keyframes fave-heart {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: -2800px 0;
-    }
-  }
-
-

@@ -1,8 +1,11 @@
 import React from 'react';
 import Gif from '../Gif/Gif';
 import { getGifsAsArray, isPlaceHolder } from '../../helpers/gifs';
+import Slider from 'react-slick';
 
-const FavoriteGifList = ({ favoriteGifs }) => {
+const FavoriteGifList = ({ favoriteGifs, useSlider }) => {
+    const sliderSettings = { dots: true, infinite: true, 
+        speed: 500, slidesToShow: 5, slidesToScroll: 5, draggable: true}
     const favoriteGifList = getGifsAsArray(favoriteGifs);
     const renderFavoriteGifs = favoriteGifList
     .map(gif => {
@@ -14,7 +17,11 @@ const FavoriteGifList = ({ favoriteGifs }) => {
                 </li>);
     });
 
-    return <ul className="gif-list">{renderFavoriteGifs}</ul>;
+    return ( 
+        <ul className="gif-list">
+            {renderFavoriteGifs}
+        </ul>
+    );
 };
 
 

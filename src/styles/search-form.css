@@ -1,0 +1,22 @@
+/* -----------Search Form Styles------------- */
+
+.search-form {
+    display: contents;
+}
+
+.MuiAppBar-colorPrimary-12 {
+    background: linear-gradient(28deg, #472086, #4a228a);
+}
+
+.MuiButton-containedPrimary-98 {
+    color: #fff;
+    background: #fcae00;
+}
+
+.MuiButton-containedPrimary-97 {
+    background-color: #fcae00 !important;
+}
+
+.MuiButton-containedPrimary-97:hover {
+    background-color: #dc9806 !important;
+}

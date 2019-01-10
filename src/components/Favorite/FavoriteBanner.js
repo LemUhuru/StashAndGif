@@ -3,25 +3,6 @@ import FavoriteGifList from './FavoriteGifList';
 import SectionDivider from '../Shared/SectionDivider';
 import Logo from '../Shared/Logo';
 import Button from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
-
-const styles = theme => ({
-    root: {
-      display: 'flex',
-      justifyContent: 'center',
-      flexWrap: 'wrap',
-    },
-    chip: {
-      margin: theme.spacing.unit,
-    },
-    button: {
-        margin: theme.spacing.unit,
-      },
-    input: {
-        display: 'none',
-    },
-  });
 
 class FavoriteBanner extends Component {
     constructor(props) {
@@ -52,7 +33,7 @@ class FavoriteBanner extends Component {
 
     render() {
         const { stickyBanner } = this.state;
-        const { gif: { favoriteGifs }, classes: { button}, history } = this.props;
+        const { gif: { favoriteGifs }, history } = this.props;
         console.log(history);
        
         return (
@@ -62,11 +43,11 @@ class FavoriteBanner extends Component {
                     onClick={() => history.push('/favorites')} 
                     variant="contained" 
                     color="primary" 
-                    className={`favorite-banner__btn ${button}`}
+                    className={`favorite-banner__btn`}
                 >
                    View Faves
                 </Button>}
-                <FavoriteGifList favoriteGifs={favoriteGifs} />
+                <FavoriteGifList favoriteGifs={favoriteGifs} useSlider={true} />
                 {stickyBanner && <Logo />}
                 <SectionDivider variant="inset" />
             </div>
@@ -74,4 +55,4 @@ class FavoriteBanner extends Component {
     };
 };
 
-export default withStyles(styles)(FavoriteBanner);
+export default FavoriteBanner;
