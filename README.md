@@ -1,5 +1,19 @@
 # Stash & Gif
 
+## Start
+
+Install using npm as follows:
+``` 
+npm i  
+```
+
+And to start the server: 
+```
+npm run start
+
+```
+
+
 ## Plans
 
 ### Features & Features 2 Be
@@ -24,3 +38,5 @@
 * Axios for network requests - Complete
 * Served from Heroku - Complete
 * NPM - Complete
+
+
