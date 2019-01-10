@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import GifListWrapper from '../Gif/GifListWrapper';
+import GifListWrapper from './GifListWrapper';
 import { addFavoriteGif, removeFavoriteGif, updateFavoriteGif } from '../../modules/FavoriteGif/actions';
 
 const mapStateToProps = ({ gif, faveGif }) => {

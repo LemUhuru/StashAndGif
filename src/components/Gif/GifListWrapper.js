@@ -1,29 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import GifList from './GifList';
 import FavoriteGifList from '../Favorite/FavoriteGifList';
-import { isFavorited, getGifsAsArray } from '../../helpers/gifs';
+import { isFavorited } from '../../helpers/gifs';
 
-class GifListWrapper extends Component {
-    constructor(props) {
-        super(props);
+const GifListWrapper = props => {
 
-        this.state = {
-            gifPlaceholders: 5,
-        };
-    };
-
-
-
-
-    handleGifClick = event => {
-        const { addFavoriteGif, removeFavoriteGif, gif, faveGif } = this.props;
+    const handleGifClick = event => {
+        const { addFavoriteGif, removeFavoriteGif, gif, faveGif } = props;
         const { gifs } = gif;
         const { favoriteGifs } = faveGif;
 
         const { id, classList } = event.target;
         const favoriteGif = gifs[id];
         const isFaveButton = classList.contains('fave-btn');
-     
+
         if (isFaveButton) { 
             if (isFavorited(id, favoriteGifs)) {
                 classList.remove('trigger');
@@ -35,20 +25,16 @@ class GifListWrapper extends Component {
         };
     };
 
-    render() {
-        const { isFaveList = false, gif, faveGif, gifLimit } = this.props;
-        const { gifPlaceholders } = this.state;
+    const { isFaveList = false, gif, faveGif, gifLimit } = props;
 
-        return (
-            <div>
-                {isFaveList ? 
-                <FavoriteGifList faveGif={faveGif} handleGifClick={this.handleGifClick} gifLimit={gifLimit} gifPlaceholders={gifPlaceholders} /> 
-                : 
-                <GifList gif={gif} handleGifClick={this.handleGifClick} gifLimit={gifLimit}  />}
-            </div>
-            )
-    };
-};
+    return (
+        <div>
+            {isFaveList ? 
+            <FavoriteGifList faveGif={faveGif} handleGifClick={handleGifClick} gifLimit={gifLimit} /> 
+            : 
+            <GifList gif={gif} handleGifClick={handleGifClick} gifLimit={gifLimit}  />}
+        </div>
+)}
 
 
 export default GifListWrapper;
