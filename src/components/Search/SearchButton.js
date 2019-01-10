@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import PersonIcon from '@material-ui/icons/Person'
+import SearchIcon from '@material-ui/icons/Whatshot';
 import buttonStyles from '../../styles/material/button';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -16,7 +16,7 @@ const SearchButton = ({ classes }) => {
                 className={button}
                 type="submit"
                 >
-                <PersonIcon />
+                <SearchIcon />
             </Button>
         </div>
     )

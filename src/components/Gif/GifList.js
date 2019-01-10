@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Gif from './Gif';
-import { isFavorited } from '../../helpers/gifs';
+import { isFavorited, getGifsAsArray } from '../../helpers/gifs';
 
 class GifList extends Component {
     // Convert to functional component.
-    
+
     handleClick = event => {
         const { addFavoriteGif, removeFavoriteGif, gif } = this.props;
         const { gifs, favoriteGifs } = gif;
@@ -12,7 +12,16 @@ class GifList extends Component {
         const faveGif = gifs[id];
         const isFaveButton = classList.contains('fave-btn');
 
+        // Swap fav with placeholder
+        // Check if favoriteGifs length is < 5 then updateFaveGifs else addFavoriteGifs
+        //   iterate over favoriteGifsArr 
+                // if the index === the gifId it hasn't been swapped yet.
+        // if it is then updateFavoriteGif(, faveGif)
         // Spark animation
+        //   const gifsArr = getGifsAsArray(favoriteGifs);
+        //   if (gifsArr.length < 5) {
+
+        //   }
         if (isFaveButton) {
             if (isFavorited(id, favoriteGifs)) {
                 classList.remove('active');

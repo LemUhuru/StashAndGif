@@ -4,6 +4,7 @@ import SectionDivider from '../Shared/SectionDivider';
 import Logo from '../Shared/Logo';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 
 const styles = theme => ({
     root: {
@@ -51,19 +52,19 @@ class FavoriteBanner extends Component {
 
     render() {
         const { stickyBanner } = this.state;
-        const { gif: { favoriteGifs }, classes: { button} } = this.props;
-
+        const { gif: { favoriteGifs }, classes: { button}, history } = this.props;
+        console.log(history);
        
         return (
             <div className={`favorite-banner ${stickyBanner && 'sticky-banner'}`}>
                 {!stickyBanner && 
                 <Button 
-                    onClick={this.handleButtonClick} 
+                    onClick={() => history.push('/favorites')} 
                     variant="contained" 
                     color="primary" 
                     className={`favorite-banner__btn ${button}`}
                 >
-                    Favorites
+                   View Faves
                 </Button>}
                 <FavoriteGifList favoriteGifs={favoriteGifs} />
                 {stickyBanner && <Logo />}

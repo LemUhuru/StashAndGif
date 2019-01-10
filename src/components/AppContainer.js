@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import App from './App';
 
 const mapStateToProps = ({ gif }) => {
@@ -7,4 +8,4 @@ const mapStateToProps = ({ gif }) => {
     };
 };
 
-export default connect(mapStateToProps, null)(App);
+export default withRouter(connect(mapStateToProps, null)(App));

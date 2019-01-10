@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import FavoriteBanner from './FavoriteBanner';
-
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = ({ gif }) => {
 

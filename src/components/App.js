@@ -1,24 +1,16 @@
 import * as React from 'react';
 import Header from './Shared/Header';
-import GifList from '../components/Gif/GifListContainer';
-import Loader from '../components/Shared/Loader';
-import ErrorLabel from '../components/Shared/ErrorLabel';
-import FavoriteBanner from '../components/Favorite/FavoriteBannerContainer';
+import FavoritePage from '../components/Favorite/FavoritePage';
+import { Route } from 'react-router-dom';
+import Home from '../components/Home';
 
 class App extends React.Component {
     render() {
-        const { gif } = this.props;
-        const { gifs } = gif;
-        const { isPending, isError, errorMsg } = gif;
-        const showGifs = !isPending && !isError && gifs; 
-
         return (
             <div>
                 <Header />
-                <FavoriteBanner />
-                {isPending && <Loader />}
-                {isError && <ErrorLabel errorMsg={errorMsg} isError={isError} />}
-                {showGifs && <GifList />}
+                <Route exact path="/" render={props => <Home {...this.props} />} />
+                <Route path="/favorites" render={props => <FavoritePage {...this.props } />} />
             </div>
         )
     };
