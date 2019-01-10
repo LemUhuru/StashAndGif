@@ -3,12 +3,19 @@ import FavoriteSection from '../Favorite/FavoriteSection';
 
 const Gif = props => {
     const { title, url, id, placeholder } = props;
-    // const placeholderUrl = `https://api.adorable.io/avatars/200/${id}`;
-    // const imageUrl = placeholder ? placeholderUrl : url;
+    // let imageUrl;
+
+    // if (placeholder) {
+    //     const placeholderId = `placeholder-${id}`;
+    //     const placeholderUrl = `https://api.adorable.io/avatars/200/${placeholderId}`;
+    //     imageUrl = placeholderUrl;
+    // } else {
+    //     imageUrl = url;
+    // };
 
     return (
         <div className="gif">
-            {!placeholder && <FavoriteSection gifId={id} placeholder={placeholder} />}
+            {!placeholder && <FavoriteSection gifId={id} />}
             <img id={id} alt={title} src={url} />
         </div>
     )

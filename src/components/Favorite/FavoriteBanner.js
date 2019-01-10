@@ -16,7 +16,7 @@ class FavoriteBanner extends Component {
     handleOnScroll = event => {
         const scrollTop = window.scrollY;
 
-        if (scrollTop > 250) {
+        if (scrollTop > 230) {
             this.setState({ stickyBanner: true });
         } else {
             this.setState({ stickyBanner: false });
@@ -34,7 +34,6 @@ class FavoriteBanner extends Component {
     render() {
         const { stickyBanner } = this.state;
         const { faveGif, history } = this.props;
-        console.log(history);
        
         return (
             <div className={`favorite-banner ${stickyBanner && 'sticky-banner'}`}>

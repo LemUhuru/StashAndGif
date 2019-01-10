@@ -7,11 +7,16 @@ class GifListWrapper extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {};
+        this.state = {
+            gifPlaceholders: 5,
+        };
     };
 
+
+
+
     handleGifClick = event => {
-        const { addFavoriteGif, removeFavoriteGif, gif, faveGif } = this.props;
+        const { addFavoriteGif, removeFavoriteGif, updateFavoriteGif, gif, faveGif } = this.props;
         const { gifs } = gif;
         const { favoriteGifs } = faveGif;
 
@@ -25,11 +30,24 @@ class GifListWrapper extends Component {
         //         if the index === the gifId it hasn't been swapped yet.
         // if it is then updateFavoriteGif(, faveGif)
         // Spark animation
-          const gifsArr = getGifsAsArray(favoriteGifs);
-          if (gifsArr.length < 5) {
+        //   const faveGifs = getGifsAsArray(favoriteGifs);
+        //   console.log(faveGifs.length, 'length')
+        //   if (faveGifs.length < 6) {
+        //     for (let i = 0; i < faveGifs.length < 10; i++) {
+        //         const placeholderId = faveGifs[i];
+        //         console.log(placeholderId)
 
-          }
-        if (isFaveButton) {
+        //         if (i === parseInt(placeholderId)) {
+        //             updateFavoriteGif(`placeholder-${placeholderId}`, favoriteGif);
+        //             break;
+        //         };
+        //     }
+        //     //  const placeholderIds = Object.keys(favoriteGifs);
+        //     //  const placeholderId = `placeholder-${Math.min(placeholderIds)}`;
+
+        //   }
+
+        if (isFaveButton) { 
             if (isFavorited(id, favoriteGifs)) {
                 classList.remove('trigger');
                 removeFavoriteGif(id);
@@ -43,11 +61,12 @@ class GifListWrapper extends Component {
 
     render() {
         const { isFaveList = false, gif, faveGif, gifLimit } = this.props;
+        const { gifPlaceholders } = this.state;
 
         return (
             <div>
                 {isFaveList ? 
-                <FavoriteGifList faveGif={faveGif} handleGifClick={this.handleGifClick} gifLimit={gifLimit} /> 
+                <FavoriteGifList faveGif={faveGif} handleGifClick={this.handleGifClick} gifLimit={gifLimit} gifPlaceholders={gifPlaceholders} /> 
                 : 
                 <GifList gif={gif} handleGifClick={this.handleGifClick} gifLimit={gifLimit}  />}
             </div>
