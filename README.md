@@ -16,9 +16,13 @@ npm run start
 
 ```
 
-## API source and Documentation
+## Giphy API source and Documentation
 
 https://developers.giphy.com/docs/
+
+
+* API access requires a test or production API_KEY
+* App uses dotenv to store and expose credentials via ```process.env```
 
 
 ## Live
