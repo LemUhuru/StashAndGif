@@ -23,6 +23,7 @@ https://developers.giphy.com/docs/
 
 * API access requires a test or production API_KEY
 * App uses dotenv to store and expose credentials via ```process.env```
+* Create a ```.env``` file in the root of the app and define the appropriate key:value pair.
 
 
 ## Live
