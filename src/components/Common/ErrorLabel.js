@@ -2,22 +2,21 @@ import React, { Component } from 'react';
 import Snackbar from '@material-ui/core/Snackbar';
 import LabelWrapper from './LabelWrapper';
 import { withStyles } from '@material-ui/core/styles';
+import errorLabelStyles from '../../styles/material/errorLabelStyles';
 
-const styles = theme => ({
-    margin: {
-      margin: theme.spacing.unit,
-    },
-  });
+/* NTS: Will need to reconsider best implementation, as current
+does not allow error label to trigger multiple time ones closed
+for the same error.
+*/
 
-  
 class ErrorLabel extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             open: false,
-        }
-    }
+        };
+    };
 
     handleClose = (event, reason) => {
          this.setState({ open: false });
@@ -51,4 +50,4 @@ class ErrorLabel extends Component {
         );
     }};
 
-export default withStyles(styles)(ErrorLabel);
+export default withStyles(errorLabelStyles)(ErrorLabel);

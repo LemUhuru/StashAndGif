@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GifListWrapper from '../Gif/GifListWrapperContainer';
-import SectionDivider from '../Common/SectionDivider';
+import Divider from '@material-ui/core/Divider';
 import Logo from '../Common/Logo';
 import Button from '@material-ui/core/Button';
 
@@ -48,7 +48,7 @@ class FavoriteBanner extends Component {
                 </Button>}
                 <GifListWrapper isFaveList={true} faveGif={faveGif} gifLimit={5} />
                 {stickyBanner && <Logo />}
-                <SectionDivider variant="inset" />
+                <Divider />
             </div>
         )
     };
