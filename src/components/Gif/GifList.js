@@ -8,7 +8,7 @@ const GifList = props => {
 
     const handleOnDrag = event => {
         const { id } = event.target;
-        console.log(`Drag Started: ${id}`);
+        
         event.dataTransfer.setData('text/plain', id);
     };
 

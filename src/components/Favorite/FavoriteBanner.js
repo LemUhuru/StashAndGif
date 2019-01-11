@@ -30,7 +30,6 @@ class FavoriteBanner extends Component {
     handleOnDragOver = event => {
         // Allow element to be dropped.
         event.preventDefault();
-        console.log('i see you!!')
     }
 
     handleOnDrop = event => {
