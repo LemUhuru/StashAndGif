@@ -18,7 +18,7 @@ class ErrorLabel extends Component {
         };
     };
 
-    handleClose = (event, reason) => {
+    handleClose = () => {
          this.setState({ open: false });
       };
 

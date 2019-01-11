@@ -5,14 +5,14 @@ import ErrorLabel from '../Common/ErrorLabel';
 import FavoriteBanner from '../Favorite/FavoriteBanner';
 
 const Home = props => {
-    const { gif, history, faveGif } = props;
+    const { gif, history, faveGif, addFavoriteGif } = props;
     const { gifs } = gif;
     const { isPending, isError, errorMsg } = gif;
     const showGifs = !isPending && !isError && gifs; 
 
     return (
     <div className="container">
-        <FavoriteBanner history={history} faveGif={faveGif} />
+        <FavoriteBanner gifs={gifs} history={history} faveGif={faveGif} addFavoriteGif={addFavoriteGif} />
         {isPending && <Loader />}
         {isError && <ErrorLabel errorMsg={errorMsg} isError={isError} />}
         {showGifs && <GifListWrapper />}

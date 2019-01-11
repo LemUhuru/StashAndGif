@@ -6,7 +6,7 @@ import Home from './Home/Home';
 
 class App extends React.Component {    
     render() {
-        const { location, history } = this.props;
+        const { location, history, addFavoriteGif } = this.props;
 
         return (
             <div>

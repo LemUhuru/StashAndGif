@@ -32,3 +32,8 @@
     opacity: 1;
     transform: scale(1);
 }
+
+
+.gif-list li.draggable img {
+    cursor: move;
+}

@@ -3,6 +3,7 @@ import GifListWrapper from '../Gif/GifListWrapperContainer';
 import Divider from '@material-ui/core/Divider';
 import Logo from '../Common/Logo';
 import Button from '@material-ui/core/Button';
+import { addFavoriteGif } from '../../modules/FavoriteGif/actions';
 
 class FavoriteBanner extends Component {
     constructor(props) {
@@ -10,7 +11,10 @@ class FavoriteBanner extends Component {
 
         this.state = {
             stickyBanner: false,
+            data: {},
         };
+
+        this.dragAndDropRef = React.createRef();
     };
 
     handleOnScroll = event => {
@@ -21,6 +25,23 @@ class FavoriteBanner extends Component {
         } else {
             this.setState({ stickyBanner: false });
         };
+    };
+
+    handleOnDragOver = event => {
+        // Allow element to be dropped.
+        event.preventDefault();
+        console.log('i see you!!')
+    }
+
+    handleOnDrop = event => {
+        event.preventDefault();
+
+        // Access dropped element
+        const { gifs, addFavoriteGif } = this.props;
+        const gifId = event.dataTransfer.getData('text/plain');
+        const gif = gifs[gifId];
+
+        if (gif) addFavoriteGif(gif);
     };
 
     componentDidMount() {
@@ -36,7 +57,11 @@ class FavoriteBanner extends Component {
         const { faveGif, history } = this.props;
        
         return (
-            <div className={`favorite-banner ${stickyBanner && 'sticky-banner'}`}>
+            <div  
+                onDrop={this.handleOnDrop} 
+                onDragOver={this.handleOnDragOver}  
+                className={`favorite-banner ${stickyBanner && 'sticky-banner'}`}
+                >
                 {!stickyBanner && 
                 <Button 
                     onClick={() => history.push('/favorites')} 
@@ -55,3 +80,5 @@ class FavoriteBanner extends Component {
 };
 
 export default FavoriteBanner;
+
+
