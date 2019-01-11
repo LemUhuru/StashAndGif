@@ -40,6 +40,7 @@ https://competent-morse-8ec57b.netlify.com/
 - [X] Persist favorite gifs using local storage
 - [X] Error handling
 - [ ] Responsive Design
+- [ ] Form Validation
 
 
 ### Stack
