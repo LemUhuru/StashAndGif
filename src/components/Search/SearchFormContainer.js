@@ -4,7 +4,7 @@ import { fetchGifs } from '../../modules/Gif/actions';
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchGifs: query => dispatch(fetchGifs(query)),
+        fetchGifs: (query, callback) => dispatch(fetchGifs(query, callback)),
     };
 };
 

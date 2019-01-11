@@ -6,13 +6,15 @@ import appBarStyles from '../../styles/material/appBarStyles';
 import SearchForm from '../Search/SearchFormContainer';
 import Logo from './Logo';
 
-const Header = ({ classes: { grow } }) => {
+const Header = props => {
+  const { history, location, classes: { grow } } = props;
+
     return (
         <AppBar position="static">
           <Toolbar>
             <Logo />
             <div className={grow} />
-            <SearchForm />
+            <SearchForm location={location} history={history} />
           </Toolbar>
         </AppBar>
     )

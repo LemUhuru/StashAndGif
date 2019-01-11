@@ -9,7 +9,7 @@ const BASE_URL = 'https://api.giphy.com/v1/gifs/';
 const { REACT_APP_GIF_API_KEY } = process.env;
 
 
-const fetchGifs = query => {
+const fetchGifs = (query, callback = null)=> {
     return dispatch => {
         dispatch(fetchGifsPending());
 
@@ -21,6 +21,7 @@ const fetchGifs = query => {
                 const { data } = response;
 
                 dispatch(fetchGifsSuccess(data));
+                callback && callback();
             })
             .catch(error => {
                 dispatch(fetchGifsFailure(error.message));

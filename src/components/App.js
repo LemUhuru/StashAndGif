@@ -4,11 +4,13 @@ import FavoritePage from './Favorite/FavoritePage';
 import { Route } from 'react-router-dom';
 import Home from './Home/Home';
 
-class App extends React.Component {
+class App extends React.Component {    
     render() {
+        const { location, history } = this.props;
+
         return (
             <div>
-                <Header />
+                <Header location={location} history={history} />
                 <Route exact path="/" render={props => <Home {...this.props} />} />
                 <Route path="/favorites" render={props => <FavoritePage {...this.props } />} />
             </div>

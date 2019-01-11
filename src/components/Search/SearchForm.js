@@ -22,10 +22,14 @@ class SearchForm extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        const { fetchGifs } = this.props;
+        const { fetchGifs, location, history } = this.props;
         const { searchQuery } = this.state;
-
+    
         fetchGifs(searchQuery);
+
+        if (location.pathname === '/favorites') {
+            history.push('/');
+        };
     };
 
 

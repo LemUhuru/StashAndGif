@@ -8,7 +8,6 @@ const SearchField = ({ classes, handleFormChange }) => {
     const { search, searchIcon, inputRoot, inputInput } = classes;
 
     return (
-
         <div className={search}>
             <div className={searchIcon}><SearchIcon /></div>
             <InputBase
@@ -20,7 +19,7 @@ const SearchField = ({ classes, handleFormChange }) => {
                 }}
             />
         </div>
-)}
+)};
 
 
 export default withStyles(searchStyles)(SearchField);

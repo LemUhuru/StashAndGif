@@ -3,16 +3,7 @@ import FavoriteSection from '../Favorite/FavoriteSection';
 
 const Gif = props => {
     const { title, url, id, placeholder } = props;
-    // let imageUrl;
-
-    // if (placeholder) {
-    //     const placeholderId = `placeholder-${id}`;
-    //     const placeholderUrl = `https://api.adorable.io/avatars/200/${placeholderId}`;
-    //     imageUrl = placeholderUrl;
-    // } else {
-    //     imageUrl = url;
-    // };
-
+    
     return (
         <div className="gif">
             {!placeholder && <FavoriteSection gifId={id} />}

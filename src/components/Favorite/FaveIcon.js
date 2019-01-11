@@ -10,11 +10,7 @@ either GifList or FavoriteGifList and pass the appropriate handler
 and state to both.
 */
 
-const FaveButton = ({ gifId }) => {
-    const classes = `fave-btn`;
-
-    return <span id={gifId} className={classes}></span>
-};
+const FaveIcon = ({ gifId }) => <span id={gifId} className="fave-btn"></span>;
 
 
-export default FaveButton;
+export default FaveIcon;

@@ -1,8 +1,8 @@
 import React from 'react';
-import FaveButton from './FaveButton';
+import FaveIcon from './FaveIcon';
 
 const FavoriteSection = ({ gifId }) => {
-    return <div className="favorite-section"><FaveButton gifId={gifId} /></div>
+    return <div className="favorite-section"><FaveIcon gifId={gifId} /></div>
 };
 
 export default FavoriteSection;
