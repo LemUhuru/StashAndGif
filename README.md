@@ -31,14 +31,14 @@ https://competent-morse-8ec57b.netlify.com/
 
 
 ### Features & Features 2 Be
-* Lazy Loading Gifs - Infinite Scroll
-* Drag & Drop your Favorite Gifs
-* Animations - Done
-* Fixed Header Favorites List -Done
-* Favorites Carousel
-* Persist favorite gifs using local storage - Done
-* Error handling - Done
-* Responsive Design
+- [ ] Lazy Loading Gifs - Infinite Scroll
+- [ ] Drag & Drop your Favorite Gifs
+- [X] Animations - Done
+- [X] Fixed Header Favorites List -Done
+- [ ] Favorites Carousel
+- [X] Persist favorite gifs using local storage - Done
+- [X] Error handling - Done
+- [ ] Responsive Design
 
 
 ### Stack
