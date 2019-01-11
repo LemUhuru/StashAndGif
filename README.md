@@ -1,5 +1,8 @@
 # Stash & Gif
 
+![alt text](src/assets/stashandgif.png)
+
+
 ## Start
 
 Install using npm as follows:
@@ -13,8 +16,10 @@ npm run start
 
 ```
 
+## Live
 
-## Plans
+https://competent-morse-8ec57b.netlify.com/
+
 
 ### Features & Features 2 Be
 * Lazy Loading Gifs - Infinite Scroll
