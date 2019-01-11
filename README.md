@@ -16,6 +16,11 @@ npm run start
 
 ```
 
+## API source and Documentation
+
+https://developers.giphy.com/docs/
+
+
 ## Live
 
 https://competent-morse-8ec57b.netlify.com/
