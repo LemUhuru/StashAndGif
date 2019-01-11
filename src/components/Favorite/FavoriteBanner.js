@@ -3,7 +3,6 @@ import GifListWrapper from '../Gif/GifListWrapperContainer';
 import Divider from '@material-ui/core/Divider';
 import Logo from '../Common/Logo';
 import Button from '@material-ui/core/Button';
-import { addFavoriteGif } from '../../modules/FavoriteGif/actions';
 
 class FavoriteBanner extends Component {
     constructor(props) {
@@ -13,8 +12,6 @@ class FavoriteBanner extends Component {
             stickyBanner: false,
             data: {},
         };
-
-        this.dragAndDropRef = React.createRef();
     };
 
     handleOnScroll = event => {

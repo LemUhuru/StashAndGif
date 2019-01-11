@@ -6,6 +6,7 @@ const FavoriteGifList = props => {
     const { faveGif, handleGifClick, gifLimit } = props;
     const { favoriteGifs } = faveGif;
     const favoriteGifList = getGifsAsArray(favoriteGifs);
+    
     const renderFavoriteGifs = favoriteGifList.reverse()
     .map(gif => {
         const { title, images, id } = gif;
@@ -15,8 +16,6 @@ const FavoriteGifList = props => {
                  <Gif id={id} title={title} url={url} placeholder={isPlaceHolder(id)} />
                 </li>);
     });
-
-    
 
     return ( 
         <ul onClick={handleGifClick} className="gif-list favorite-list">
