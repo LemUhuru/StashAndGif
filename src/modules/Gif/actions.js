@@ -5,7 +5,7 @@ import {
     FETCH_GIFS_PENDING,
 } from './types';
 
-const BASE_URL = 'http://api.giphy.com/v1/gifs/';
+const BASE_URL = 'https://api.giphy.com/v1/gifs/';
 const { REACT_APP_GIF_API_KEY } = process.env;
 
 
