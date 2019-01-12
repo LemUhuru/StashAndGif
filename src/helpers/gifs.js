@@ -1,3 +1,11 @@
+const placeholderIds = [ 
+    "placeholder-1", 
+    "placeholder-2", 
+    "placeholder-3", 
+    "placeholder-4", 
+    "placeholder-5",
+];
+
 function getGif(id, gifs = {}) {
     const gifIds = Object.keys(gifs);
     const gif = gifIds[id];
@@ -18,7 +26,6 @@ function isFavorited(id, favoriteGifs = {}) {
 };
 
 function isPlaceHolder(id) {
-    const placeholderIds = [ "placeholder-1", "placeholder-2", "placeholder-3", "placeholder-4", "placeholder-5"];
     const isPlaceHolder = placeholderIds.includes(id);
 
     return isPlaceHolder;
