@@ -32,7 +32,7 @@ https://competent-morse-8ec57b.netlify.com/
 
 
 ### Features & Features 2 Be
-- [ ] Lazy Loading Gifs - Infinite Scroll
+- [ ] Pagination
 - [X] Drag & Drop your Favorite Gifs
 - [X] Animations
 - [X] Fixed Header Favorites List
