@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { omit } from 'lodash';
 import favoriteGifs from '../../seed/favoriteGifs';
 
 import {
@@ -31,7 +31,7 @@ export default function reducer(state = INITIAL_STATE, action = {}) {
         case REMOVE_FAVORITE_GIF:
            return {
                 ...state,
-                favoriteGifs: _.omit(favoriteGifs, payload)
+                favoriteGifs: omit(favoriteGifs, payload)
             };
             
         default:

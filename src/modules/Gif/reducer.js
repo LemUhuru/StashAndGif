@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { mapKeys } from 'lodash';
 
 import {
     FETCH_GIFS_SUCCESS,
@@ -30,7 +30,7 @@ export default function reducer(state = INITIAL_STATE, action = {}) {
                 ...state,
                 isPending: false,
                 isError: false,
-                gifs: _.mapKeys(payload.data, 'id'),
+                gifs: mapKeys(payload.data, 'id'),
                 pagination: payload.pagination,
                 meta: payload.meta,
             };
