@@ -25,6 +25,7 @@ https://developers.giphy.com/docs/
 * App uses dotenv to store and expose credentials via ```process.env```
 * Install dotenv ```npm i --save dotenv```
 * Create a ```.env``` file in the root of the app and define the appropriate key:value pair.
+* Add ```.env``` to ```.gitignore``` to prevent commiting secure credentials
 
 
 ## Live
