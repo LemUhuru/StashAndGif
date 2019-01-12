@@ -16,7 +16,9 @@ const INITIAL_STATE = {
 };
 
 export default function reducer(state = INITIAL_STATE, action = {}) {
-    switch(action.type) {
+    const { type, payload } = action;
+
+    switch(type) {
         case FETCH_GIFS_PENDING:
             return {
                 ...state,
@@ -28,9 +30,9 @@ export default function reducer(state = INITIAL_STATE, action = {}) {
                 ...state,
                 isPending: false,
                 isError: false,
-                gifs: _.mapKeys(action.payload.data, 'id'),
-                pagination: action.payload.pagination,
-                meta: action.payload.meta,
+                gifs: _.mapKeys(payload.data, 'id'),
+                pagination: payload.pagination,
+                meta: payload.meta,
             };
 
         case FETCH_GIFS_FAILURE:
@@ -39,7 +41,7 @@ export default function reducer(state = INITIAL_STATE, action = {}) {
                 isError: true,
                 isPending: false,
                 isSuccess: false,
-                errorMsg: action.payload,
+                errorMsg: payload,
             };
 
         default:

@@ -12,23 +12,26 @@ const INITIAL_STATE = {
 };
 
 export default function reducer(state = INITIAL_STATE, action = {}) {
-   switch(action.type) {
+    const { favoriteGifs } = state;
+    const { type, payload } = action;
+
+   switch(type) {
        case ADD_FAVORITE_GIF:
             return {
                 ...state,
-                favoriteGifs: { ...state.favoriteGifs, [action.payload.id]: action.payload }
+                favoriteGifs: { ...favoriteGifs, [payload.id]: payload }
             };
 
         case UPDATE_FAVORITE_GIF:
             return {
                 ...state,
-                favoriteGifs: { ...state.favoriteGifs, [action.payload.id]: action.payload.gif }
+                favoriteGifs: { ...favoriteGifs, [payload.id]: payload.gif }
             }
 
         case REMOVE_FAVORITE_GIF:
            return {
                 ...state,
-                favoriteGifs: _.omit(state.favoriteGifs, action.payload)
+                favoriteGifs: _.omit(favoriteGifs, payload)
             };
             
         default:

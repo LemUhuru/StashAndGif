@@ -11,8 +11,6 @@ class FavoriteBanner extends Component {
         this.state = {
             stickyBanner: false,
         };
-
-        this.stickyBannerRef = React.createRef();
     };
 
     handleOnScroll = event => {
@@ -55,7 +53,6 @@ class FavoriteBanner extends Component {
        
         return (
             <div
-                ref={this.stickyBannerRef}
                 onDrop={this.handleOnDrop} 
                 onDragOver={this.handleOnDragOver}  
                 className={`favorite-banner ${stickyBanner && 'sticky-banner'}`}
