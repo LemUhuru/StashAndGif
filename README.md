@@ -50,10 +50,10 @@ https://competent-morse-8ec57b.netlify.com/
 - [ ] Unit & UI Testing w/ Jest/Enzyme and NightmareJS
 - [X] DotEnv for storing credentials
 - [X] Styled using Custom CSS & Materiual-UI
-* [X] Git for version control
-* [X] Redux Thunk to manage async dispatches
-* [X] Axios for network requests
-* [X] Served from Netlify
-* [X] NPM for task & package management
+- [X] Git for version control
+- [X] Redux Thunk to manage async dispatches
+- [X] Axios for network requests
+- [X] Served from Netlify
+- [X] NPM for task & package management
 
 
