@@ -6,13 +6,6 @@ const placeholderIds = [
     "placeholder-5",
 ];
 
-function getGif(id, gifs = {}) {
-    const gifIds = Object.keys(gifs);
-    const gif = gifIds[id];
-
-    return gif;
-};
-
 function getGifsAsArray(gifs = {}) {
     const gifIds = Object.keys(gifs);
 
@@ -32,7 +25,6 @@ function isPlaceHolder(id) {
 };
 
 export {
-    getGif,
     isFavorited,
     getGifsAsArray,
     isPlaceHolder,

@@ -49,7 +49,7 @@ https://competent-morse-8ec57b.netlify.com/
 - [X] Client Framework: React & Redux
 - [X] Redux Dev Tools
 - [ ] Type checking with Flow
-- [ ] Unit & UI Testing w/ Jest/Enzyme and NightmareJS
+- [ ] Unit & UI Testing w/ Jest, Enzyme, and NightmareJS
 - [X] DotEnv for storing credentials
 - [X] Styled using Custom CSS & Materiual-UI
 - [X] Git for version control

@@ -7,7 +7,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { variantIcon } from './constants';
 import labelWrapperStyles from '../../styles/material/labelWrapperStyles';
   
-function LabelWrapper(props) {
+const LabelWrapper = props => {
   const { classes, className, message, onClose, variant, ...other } = props;
   const Icon = variantIcon[variant];
 

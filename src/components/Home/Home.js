@@ -1,22 +1,70 @@
-import React from 'react';
+import React, { Component } from 'react';
 import GifListWrapper from '../Gif/GifListWrapperContainer';
 import Loader from '../Common/Loader';
 import ErrorLabel from '../Common/ErrorLabel';
 import FavoriteBanner from '../Favorite/FavoriteBanner';
+import PaginateButton from '../Common/PaginateButton';
 
-const Home = props => {
-    const { gif, history, faveGif, addFavoriteGif } = props;
-    const { gifs } = gif;
-    const { isPending, isError, errorMsg } = gif;
-    const showGifs = !isPending && !isError && gifs; 
+class Home extends Component {
+    constructor(props) {
+        super(props);
 
-    return (
-    <div className="container">
-        <FavoriteBanner gifs={gifs} history={history} faveGif={faveGif} addFavoriteGif={addFavoriteGif} />
-        {isPending && <Loader />}
-        {isError && <ErrorLabel errorMsg={errorMsg} isError={isError} />}
-        {showGifs && <GifListWrapper />}
-    </div>);
+        this.state = {
+            showStickyBanner: false,
+            endOfPage: false,
+        };
+    }
+
+    handleOnScroll = () => {
+       const html = document.querySelector('html');
+       const { scrollHeight, scrollTop, clientHeight } = html;
+       const endOfPage = scrollHeight - scrollTop === clientHeight
+
+        if (endOfPage) {
+            this.setState({ endOfPage: true });
+        }
+
+        if (scrollTop > 230) {
+            this.setState({ showStickyBanner: true });
+        } else {
+            this.setState({ showStickyBanner: false });
+        };
+    };
+
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleOnScroll);
+    };
+
+    componentWillUnMount() {
+        window.removeEventListener('scroll', this.handleOnScroll);
+    };
+
+
+    render() {
+        const { showStickyBanner, endOfPage } = this.state;
+        const { gif, history, faveGif, addFavoriteGif, fetchNextPage,  } = this.props;
+        const { gifs, pagination } = gif;
+        const { isPending, isError, errorMsg } = gif;
+        const showGifs = !isPending && !isError && gifs;
+        const showPaginateButton = showGifs && endOfPage;
+
+        return (
+            <div className="container">
+                <FavoriteBanner 
+                    gifs={gifs} 
+                    history={history} 
+                    faveGif={faveGif} 
+                    addFavoriteGif={addFavoriteGif}
+                    showStickyBanner={showStickyBanner}
+                />
+                {isPending && <Loader />}
+                {isError && <ErrorLabel errorMsg={errorMsg} isError={isError} />}
+                {showGifs && <GifListWrapper />}
+                {showPaginateButton && <PaginateButton fetchNextPage={fetchNextPage} pagination={pagination} />}
+            </div>
+        );
+    };
 };
 
 
