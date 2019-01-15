@@ -17,7 +17,7 @@ const fetchGifs = (query, pagination = {}, callback = null)=> {
         dispatch(fetchGifsPending())
 
         try {
-            const path = `${BASE_URL}search?q=${query}&api_key=${REACT_APP_GIF_API_KEY}&offset=50`;
+            const path = `${BASE_URL}search?q=${query}&api_key=${REACT_APP_GIF_API_KEY}&limit=15`;
 
             axios.get(path)
             .then(({ data }) => {

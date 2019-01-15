@@ -1,0 +1,6 @@
+@import "./search-form.css";
+@import "./logo.css";
+
+.header {
+    background: linear-gradient(28deg, #472086, #4a228a);
+}

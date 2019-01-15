@@ -1,0 +1,11 @@
+.brand-name a {
+    font-size: 21px;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    font-family: "Walsheim";
+    border: 2px solid #fff;
+    padding: 10px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 3px #fcae00;
+}

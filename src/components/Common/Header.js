@@ -10,7 +10,7 @@ const Header = props => {
   const { history, location, classes: { grow } } = props;
 
     return (
-        <AppBar position="static">
+        <AppBar position="static" className="header">
           <Toolbar>
             <Logo />
             <div className={grow} />

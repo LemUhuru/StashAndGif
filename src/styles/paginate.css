@@ -1,0 +1,22 @@
+.paginate-btn {
+    margin: 0 auto;
+    width: 150px;
+}
+
+.paginate-btn button {
+    width: 150px;
+    height: 30px;
+    font-size: 12px;
+    margin: 0 auto;
+    background: #fcae00;
+    color: #fff;
+}
+
+.paginate-btn button:hover {
+    background: #dc9806;
+}
+
+.paginate-btn svg {
+    width: 15px;
+    margin-right: 5px;
+}

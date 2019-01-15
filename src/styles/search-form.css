@@ -4,19 +4,11 @@
     display: contents;
 }
 
-.MuiAppBar-colorPrimary-12 {
-    background: linear-gradient(28deg, #472086, #4a228a);
-}
-
-.MuiButton-containedPrimary-98 {
+.search-form button {
     color: #fff;
     background: #fcae00;
 }
 
-.MuiButton-containedPrimary-97 {
-    background-color: #fcae00 !important;
-}
-
-.MuiButton-containedPrimary-97:hover {
-    background-color: #dc9806 !important;
+.search-form button:hover {
+    background: #dc9806;
 }

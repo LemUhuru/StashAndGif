@@ -12,7 +12,7 @@ const GifList = props => {
         event.dataTransfer.setData('text/plain', id);
     };
 
-    const renderGifList = gifIds.reverse()
+    const renderGifList = gifIds
     .map(id => {
         const gif = gifs[id];
         const { title, images } = gif;

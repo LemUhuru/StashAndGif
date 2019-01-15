@@ -63,7 +63,7 @@ export default function reducer(state = INITIAL_STATE, action = {}) {
                 ...state,
                 fetchingNextPageError: false,
                 fetchingNextPagePending: false,
-                gifs: { ...state.gifs, ...action.payload.data },
+                gifs: { ...state.gifs, ...mapKeys(action.payload.data, 'id')},
                 pagination: action.payload.pagination,
             }
 

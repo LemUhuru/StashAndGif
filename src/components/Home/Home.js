@@ -43,11 +43,11 @@ class Home extends Component {
 
     render() {
         const { showStickyBanner, endOfPage } = this.state;
-        const { gif, history, faveGif, addFavoriteGif, fetchNextPage,  } = this.props;
-        const { gifs, pagination } = gif;
+        const { gif, history, faveGif, addFavoriteGif, fetchNextPage } = this.props;
+        const { gifs, pagination, fetchNextPagePending } = gif;
         const { isPending, isError, errorMsg } = gif;
         const showGifs = !isPending && !isError && gifs;
-        const showPaginateButton = showGifs && endOfPage;
+        const showPaginateButton = showGifs && !fetchNextPagePending && endOfPage;
 
         return (
             <div className="container">
@@ -61,6 +61,7 @@ class Home extends Component {
                 {isPending && <Loader />}
                 {isError && <ErrorLabel errorMsg={errorMsg} isError={isError} />}
                 {showGifs && <GifListWrapper />}
+                {fetchNextPagePending && <Loader />}
                 {showPaginateButton && <PaginateButton fetchNextPage={fetchNextPage} pagination={pagination} />}
             </div>
         );
